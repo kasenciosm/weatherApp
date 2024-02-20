@@ -36,7 +36,9 @@ const Forecast = ({ data }) => {
                     </h3>
                 ))}
             </div>
-
+            <footer className="footer">
+                <span>Desarrollado por Kenyi Asencios</span>
+            </footer>
         </section>
     )
 }

@@ -37,7 +37,7 @@ const Search = () => {
     }
 
 
-    console.log(forecast, "forecast")
+    console.log("respuesta", data)
     if (forecast == null) {
         return (
             <>

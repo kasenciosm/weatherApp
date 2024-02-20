@@ -4,7 +4,7 @@ const CurrentWeather = ({ data }) => {
         <>
             <div className="top">
                 <div className="location">
-                    <p>{data.name}</p>
+                    <p>{data.name} - {data.sys?.country}</p>
                 </div>
                 <div className="temp">
                     {data.main ? <h1>{Math.round(data.main.temp.toFixed())}°C</h1> : null}
