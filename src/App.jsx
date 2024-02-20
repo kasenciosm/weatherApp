@@ -5,9 +5,12 @@ function App() {
 
 
   return (
-    <main className="app">
-      <Search />
-    </main>
+    <>
+      <main className="app">
+        <Search />
+      </main>
+
+    </>
   );
 }
 

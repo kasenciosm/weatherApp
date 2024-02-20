@@ -27,6 +27,12 @@ h2{
   padding: .2rem;
 }
 
+.search-city{
+  padding: 4rem;
+  font-size: 4rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 .error{
   color: red;
   position:absolute;
@@ -48,7 +54,11 @@ h2{
   color: #ffff;
 }
 
-
+@media  screen and (max-width:480px) {
+  .app{
+    height: 150vh;
+  }
+}
 .app:before{
   content: '';
   background: url('./assets/sunset.jpg') no-repeat center center/cover;
@@ -161,4 +171,12 @@ span{
   text-align: center;
   display: flex;
   flex-direction: column;
+}
+
+.footer{
+  font-size: .5rem;
+  color: #e4e3e3;
+  position: absolute;
+  top: 1000px;
+  left: 150px;
 }

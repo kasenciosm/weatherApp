@@ -7,7 +7,6 @@ const Search = () => {
     const [data, setData] = useState({})
     const [location, setLocation] = useState('')
     const [forecast, setForecast] = useState(null)
-    // const [error, setError] = useState(false)
 
     const searchLocation = async (event) => {
         try {
@@ -31,7 +30,6 @@ const Search = () => {
 
                     })
                 setLocation('')
-                // setError(false)
             }
         } catch (error) {
             console.error(error)
@@ -51,13 +49,13 @@ const Search = () => {
                         placeholder='Enter Location'
                         type="text" />
                 </div>
-                <h2>Busca el clima de tu ciudad</h2>
+                <h2 className='search-city'>Busca el clima de tu ciudad</h2>
             </>
         )
     } else {
 
         return (
-            <>
+            <section>
                 <div className="search">
                     <input
                         value={location}
@@ -73,9 +71,7 @@ const Search = () => {
                         data={forecast} />
                     {/* } */}
                 </div>
-
-
-            </>
+            </section>
         )
     }
 }
