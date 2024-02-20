@@ -54,11 +54,6 @@ h2{
   color: #ffff;
 }
 
-@media (min-width:360px) and (max-width:480px){
-  .app{
-    height: 120vh;
-  }
-}
 .app:before{
   content: '';
   background: url('./assets/sunset.jpg') no-repeat center center/cover;
@@ -70,6 +65,11 @@ h2{
   z-index: -1;
 }
 
+@media (min-width:360px) and (max-width:640px){
+  .app{
+    height:120vh;
+  }
+}
 .app .search{
   text-align: center;
   padding: 1rem;
