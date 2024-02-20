@@ -7,54 +7,77 @@ const Search = () => {
     const [data, setData] = useState({})
     const [location, setLocation] = useState('')
     const [forecast, setForecast] = useState(null)
-    const [error, setError] = useState(false)
+    // const [error, setError] = useState(false)
 
-    const searchLocation = (event) => {
+    const searchLocation = async (event) => {
         try {
             if (event.key === 'Enter') {
-                const currentWeatherFecth = fetch(
+                const currentWeatherFetch = await fetch(
                     `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=${WEATHER_API_KEY}`
                 )
-                const forecastFetch = fetch(
+
+                const forecastFetch = await fetch(
                     `https://api.openweathermap.org/data/2.5/forecast?q=${location}&units=metric&appid=${WEATHER_API_KEY}`
                 )
 
-                Promise.all([currentWeatherFecth, forecastFetch])
+
+                Promise.all([currentWeatherFetch, forecastFetch])
                     .then(async (response) => {
                         const weatherResponse = await response[0].json()
                         const forecastResponse = await response[1].json()
 
                         setData(weatherResponse)
-                        setForecast(forecastResponse)
-                    })
+                        setForecast(forecastResponse || null)
 
+                    })
                 setLocation('')
+                // setError(false)
             }
         } catch (error) {
-            setError(error)
+            console.error(error)
         }
     }
+
+
     console.log(forecast, "forecast")
-    return (
-        <>
-            <div className="search">
-                <input
-                    value={location}
-                    onChange={event => setLocation(event.target.value)}
-                    onKeyDown={searchLocation}
-                    placeholder='Enter Location'
-                    type="text" />
-            </div>
-            {error && <p>{error.message}</p>}
-            <div className="container">
-                <CurrentWeather data={data} />
-                <Forecast
-                    data={forecast} />
-            </div>
-            <div className='forecast'>
-            </div>
-        </>
-    )
+    if (forecast == null) {
+        return (
+            <>
+                <div className="search">
+                    <input
+                        value={location}
+                        onChange={event => setLocation(event.target.value)}
+                        onKeyDown={searchLocation}
+                        placeholder='Enter Location'
+                        type="text" />
+                </div>
+                <h2>Busca el clima de tu ciudad</h2>
+            </>
+        )
+    } else {
+
+        return (
+            <>
+                <div className="search">
+                    <input
+                        value={location}
+                        onChange={event => setLocation(event.target.value)}
+                        onKeyDown={searchLocation}
+                        placeholder='Enter Location'
+                        type="text" />
+                </div>
+
+                <div className="container">
+                    <CurrentWeather data={data} />
+                    <Forecast
+                        data={forecast} />
+                    {/* } */}
+                </div>
+
+
+            </>
+        )
+    }
 }
 
 export default Search
