@@ -10,3 +10,4 @@ Currently, two official plugins are available:
   # Web
 
   https://weather-app-kasencios.vercel.app/
+# weatherApp
