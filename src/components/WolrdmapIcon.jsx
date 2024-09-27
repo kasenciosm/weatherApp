@@ -7,8 +7,8 @@ const WolrdmapIcon = () => {
     height="220"
     viewBox="0 0 24 24"
     fill="none"
-    stroke="currentColor"
-    strokeWidth="1"
+    stroke="#e8eff3"
+    strokeWidth="0.5"
     strokeLinecap="round"
     strokeLinejoin="round"
   >
