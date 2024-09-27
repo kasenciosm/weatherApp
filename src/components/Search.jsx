@@ -2,6 +2,7 @@ import { useState } from 'react'
 import CurrentWeather from './CurrentWeather'
 import { WEATHER_API_KEY } from './api/api'
 import Forecast from './Forecast'
+import WolrdmapIcon from './WolrdmapIcon'
 
 const Search = () => {
     const [data, setData] = useState({})
@@ -40,7 +41,7 @@ const Search = () => {
     console.log("respuesta", data)
     if (forecast == null) {
         return (
-            <>
+            <main className='inicio'>
                 <div className="search">
                     <input
                         value={location}
@@ -49,8 +50,9 @@ const Search = () => {
                         placeholder='Enter Location'
                         type="text" />
                 </div>
-                <h2 className='search-city'>Busca el clima de tu ciudad</h2>
-            </>
+                <h2 className='title'>Busca el clima de tu ciudad</h2>
+                <WolrdmapIcon/>
+            </main>
         )
     } else {
 

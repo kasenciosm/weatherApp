@@ -11,7 +11,7 @@ const Forecast = ({ data }) => {
     }
 
     return (
-        <section>
+        <section className="forecast">
             <div className="days">
                 <h2>In the week</h2>
                 {data.list?.splice(0, 7).map((item, index) => (
@@ -36,9 +36,7 @@ const Forecast = ({ data }) => {
                     </h3>
                 ))}
             </div>
-            <footer className="footer">
-                <span>Desarrollado por Kenyi Asencios</span>
-            </footer>
+            
         </section>
     )
 }

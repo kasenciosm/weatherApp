@@ -8,8 +8,10 @@ function App() {
     <>
       <main className="app">
         <Search />
+      <footer className="footer">
+        <span>Desarrollado por Kenyi Asencios</span>
+      </footer>
       </main>
-
     </>
   );
 }
