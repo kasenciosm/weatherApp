@@ -72,9 +72,9 @@ h2{
   z-index: -1;
 }
 
-@media (min-width:360px) and (max-width:640px){
+@media (min-width:375px) and (max-width:680px){
   .app{
-    height:125vh;
+    height:140vh;
   }
 }
 .app .search{
